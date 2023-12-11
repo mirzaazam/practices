@@ -14,12 +14,13 @@ loadProducts('https://fakestoreapi.com/products');
 
 // show all product in UI
 const showProducts = (products) => {
-   
+   console.log(products.length);
    setInnerText('total_products', products.length);
 
    document.getElementById("all-products").innerHTML = "";
 
-   const allProducts = products.slice(0, 10).map((pd) => pd);
+   const allProducts = products.slice(0, 10); 
+   // .map((pd) => pd)
    for (const product of allProducts) {
       // const image = product.images;
       // console.log(product.image);
@@ -63,7 +64,7 @@ const showProductDetails = (product_id) => {
 };
 
 const showProductDetailsInModal = (product_details) => {
-   console.log(product_details);
+   console.log(product_details);    
    setInnerText('exampleModalLabel', product_details.title);
    setInnerText('product_id', product_details.id);
    setInnerText('modal_body', product_details.description);
@@ -79,9 +80,9 @@ const getInputValue = (id) => {
 // main price update function
 const updatePrice = (id, value) => {                                    //error
    const convertedOldPrice = getInputValue(id);
-   const convertPrice = parseInt(value);
+   const convertPrice = parseFloat(value);
    const total = convertedOldPrice + convertPrice;
-   document.getElementById(id).innerText = Math.round(total);
+   document.getElementById(id).innerText = total.toFixed(2);
 };
 
 // set innerText function
