@@ -5,12 +5,13 @@ document.getElementById("btn-deposit").addEventListener("click", function () {
     2. get the value from the element
     3. convert string value to a number
     */
+
+    console.log('worked');
   const newDepositAmount = getInputFieldValueById("deposit-field");
   setTextElementValueById("deposit-total", newDepositAmount);
-  /* 
-    1. get previous deposit total by id
+  
+    // 1. get previous deposit total by id
 
-    */
   const previousDepositTotal = getTextElementValueById("deposit-total");
 
   // get previous balance by using the function
