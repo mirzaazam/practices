@@ -19,9 +19,9 @@ const showProducts = (products) => {
 
    document.getElementById("all-products").innerHTML = "";
 
-   const allProducts = products.slice(0, 10); 
+   // const allProducts = products.slice(0, 10); 
    // .map((pd) => pd)
-   for (const product of allProducts) {
+   for (const product of products) {
       // const image = product.images;
       // console.log(product.image);
       const div = document.createElement('div');
@@ -87,7 +87,7 @@ const updatePrice = (id, value) => {                                    //error
 
 // set innerText function
 const setInnerText = (id, value) => {
-   document.getElementById(id).innerText = Math.round(value);
+   document.getElementById(id).innerText = value;
 };
 
 // update delivery charge and total Tax
@@ -119,7 +119,7 @@ const updateTotal = () => {
 // search by category
 document.getElementById("search-btn").addEventListener("click", function () {
    const inputField = document.getElementById("input-value").value;
-   const searchedProduct = arr[0].find((p) =>
+   const searchedProduct = arr[0].filter((p) =>
      p.category.startsWith(`${inputField}`)
    );
    showProducts(searchedProduct);
