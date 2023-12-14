@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 3</title>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{
+            padding: 10px 15px;
+            background-color: orange;
+            border: none;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 5px;
+            color: darkblue;
+        }
+        #count-value{
+            font-size: 50px;
+            color: darkblue;
+        }
+        .sub-container{
+            background-color: darkcyan;
+            padding: 100px;
+            border-radius: 10px;
+        }
+        .label{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sub-container">
+            <h1 style="text-align: center; color: white;">please! Contact Me</h1>
+            <div>
+                <label class="label" for="">Name</label><br>
+                <input type="text">
+                <button>Delete Name</button>
+                <button>Send Name</button>
+            </div>
+            <div>
+                <label class="label" for="">Email</label><br>
+                <input type="email">
+                <button>Delete Name</button>
+                <button>Send Name</button>
+            </div>
+            <label class="label" for="">Message</label><br>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <textarea name="" id="" cols="22" rows="1"></textarea>
+                <button>Delete Name</button>
+                <button>Send Name</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- js file  -->
+    <script src="./script.js"></script>
+</body>
+</html>

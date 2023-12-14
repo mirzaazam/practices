@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavel-2 Task</title>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{
+            padding: 10px 15px;
+            background-color: orange;
+            border: none;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 5px;
+            color: darkblue;
+        }
+        #count-value{
+            font-size: 50px;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <p><span id="count-value">0</span></p>
+        <button id="btn" onclick="functionForCount()">Count</button>
+    </div>
+
+
+
+    <!-- js script -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
