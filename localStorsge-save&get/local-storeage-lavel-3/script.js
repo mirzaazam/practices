@@ -41,4 +41,13 @@ document.getElementById('delete-email-name').addEventListener('click', function(
 document.getElementById('send-email-btn').addEventListener('click', function(){
     forSendButton('email-field', 'email');
 }); 
+// for delete text area
+document.getElementById('textArea-delete-btn').addEventListener('click', function(){
+    forDeleteBtn('message');
+}); 
+
+// for send text area
+document.getElementById('textArea-send-btn').addEventListener('click', function(){
+    forSendButton('text-area', 'message');
+}); 
 
