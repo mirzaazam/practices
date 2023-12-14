@@ -51,3 +51,8 @@ document.getElementById('textArea-send-btn').addEventListener('click', function(
     forSendButton('text-area', 'message');
 }); 
 
+// for reset-btn
+document.getElementById('reset-btn').addEventListener('click', function(){
+    localStorage.clear();
+}); 
+
