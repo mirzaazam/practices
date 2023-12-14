@@ -87,3 +87,20 @@ document.getElementById('send-btn').addEventListener('click', function () {
         localStorage.setItem('contact', JSON.stringify(contacts));
     }
 });
+
+//reload 
+const reload = () => {
+    const contactsString = localStorage.getItem('contact')
+    const contactsObject = JSON.parse(contactsString);
+
+    if (contactsObject) {
+        document.getElementById('name-input').value = contactsObject.name;
+        document.getElementById('email-field').value = contactsObject.email;
+        document.getElementById('text-area').value = contactsObject.TaxtArea;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+    reload();
+});
+
