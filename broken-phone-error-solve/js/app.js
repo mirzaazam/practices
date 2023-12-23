@@ -7,8 +7,9 @@ const loadPhones = async(searchText, dataLimit) =>{
 }
 
 const displayPhones = (phones, dataLimit) =>{
+
     const phonesContainer = document.getElementById('phones-container');
-    // phonesContainer.textContent = '';
+    phonesContainer.textContent = '';
     // display 10 phones only 
     const showAll = document.getElementById('show-all');
     if(dataLimit && phones.length > 10) {
@@ -56,6 +57,7 @@ const processSearch = (dataLimit) =>{
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     loadPhones(searchText, dataLimit);
+    searchField.value = '';
 }
 
 // handle search button click
