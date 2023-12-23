@@ -2,7 +2,6 @@ const loadPhones = async(searchText, dataLimit) =>{
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data.data);
     displayPhones(data.data, dataLimit);
 }
 
@@ -33,7 +32,6 @@ const displayPhones = (phones, dataLimit) =>{
 
     // display all phones
     phones.forEach(phone =>{
-        console.log(phone);
         const phoneDiv  = document.createElement('div');
         phoneDiv.classList.add('col');
         phoneDiv.innerHTML = `
@@ -92,7 +90,7 @@ document.getElementById('btn-show-all').addEventListener('click', function(){
 })
 
 const loadPhoneDetails = async id =>{
-    const url =`www.openapi.programming-hero.com/api/phone/${id}`;
+    const url =`https://openapi.programming-hero.com/api/phone/${id}`;
     const res = await fetch(url);
     const data = await res.json();
     displayPhoneDetails(data.data);
@@ -100,16 +98,16 @@ const loadPhoneDetails = async id =>{
 
 const displayPhoneDetails = phone =>{
     console.log(phone);
-    const modalTitle = document.getElementById('phoneDetailModalLabel');
+    const modalTitle = document.getElementById('modal-title');
     modalTitle.innerText = phone.name;
     const phoneDetails = document.getElementById('phone-details');
-    console.log(phone.mainFeatures.sensors[0]);
     phoneDetails.innerHTML = `
         <p>Release Date: ${phone.releaseDate}</p>
-        <p>Storage: ${phone.mainFeatures}</p>
-        <p>Others: ${phone.others ? phone.others.Bluetooth : 'No Bluetooth Information'}</p>
+        <p>Storage: ${phone.mainFeatures.storage}</p>
+        <p>Others: ${phone.others ? 'Bluetooth '+ phone.others.Bluetooth : 'No Bluetooth Information'}</p>
         <p>Sensor: ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors[0] : 'no sensor'}</p>
     `
 }
 
-// loadPhones('apple');
+loadPhones('samsung');
+{/* <p>Others: ${phone.others ? 'Bluetooth '+ phone.others.Bluetooth : 'No Bluetooth Information'}</p> */}
