@@ -16,7 +16,7 @@ const displayPhones = (phones, dataLimit) =>{
         showAll.classList.remove('d-none');
     }
     else{
-        showAll.classList.add('d-hidden');
+        showAll.classList.add('d-none');
     }
     
 
@@ -65,8 +65,8 @@ document.getElementById('btn-search').addEventListener('click', function(){
 })
 
 // search input field enter key handler
-document.getElementById('search-field').addEventListener('keypress', function (e) {
-    if (e.key === 'enter') {
+document.getElementById('search-field').addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
         processSearch(10);
     }
 });
@@ -84,6 +84,8 @@ const toggleSpinner = isLoading => {
 
 // not the best way to load show All
 document.getElementById('btn-show-all').addEventListener('click', function(){
+    const phonesContainer = document.getElementById('phones-container');
+    phonesContainer.textContent = '';
     processSearch();
 })
 
