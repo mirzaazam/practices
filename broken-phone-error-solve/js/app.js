@@ -48,11 +48,11 @@ const displayPhones = (phones, dataLimit) =>{
         phonesContainer.appendChild(phoneDiv);
     });
     // stop spinner or loader
-    // toggleSpinner(false);
+    toggleSpinner(true);
 }
 
 const processSearch = (dataLimit) =>{
-    toggleSpinner(true);
+    toggleSpinner(false);
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
     loadPhones(searchText, dataLimit);
